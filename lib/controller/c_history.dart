@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 import 'package:hotelgo/model/booking.dart';
-import 'package:hotelgo/model/property.dart';
 import 'package:hotelgo/source/booking_source.dart';
 import 'package:hotelgo/source/properties_source.dart';
 

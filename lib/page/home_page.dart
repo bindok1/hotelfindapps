@@ -6,6 +6,7 @@ import 'package:hotelgo/config/app_color.dart';
 import 'package:hotelgo/controller/c_home.dart';
 import 'package:hotelgo/page/history_page.dart';
 import 'package:hotelgo/page/nearby_page.dart';
+import 'package:hotelgo/widget/cooming_soon.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -33,10 +34,13 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Obx(() {
+        if (cHome.indexPage == 0) {
+          return NearbyPage();
+        }
         if (cHome.indexPage == 1) {
           return HistoryPage();
         }
-        return NearbyPage();
+        return CoomingSoon();
       }),
       bottomNavigationBar: Obx(() {
         return Material(
