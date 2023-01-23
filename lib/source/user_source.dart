@@ -1,0 +1,39 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart' as auth;
+import 'package:hotelgo/config/session.dart';
+
+import '../model/user.dart';
+//agar tidak nabrak antar model gunakan "as"
+
+class UserSource {
+  static Future<Map<String, dynamic>> signIn(
+      String email, String password) async {
+    Map<String, dynamic> response = {};
+    try {
+      final Credential = await auth.FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
+      response['success'] = true;
+      response['message'] = 'Sign In Success';
+      //uid untuk get data dari firebase
+      String uid = Credential.user!.uid;
+      User user = await getWhereId(uid);
+      Session.saveUser(user);
+    } on auth.FirebaseAuthException catch (e) {
+      response['success'] = false;
+      if (e.code == 'user-not-found') {
+        response['message'] = 'No user found for that email';
+      } else if (e.code == 'wrong-password') {
+        response['message'] = 'Wrong password for that user';
+      } else {
+        response['message'] = 'Sign in failed';
+      }
+    }
+    return response;
+  }
+
+  static Future<User> getWhereId(String id) async {
+    var ref = FirebaseFirestore.instance.collection('user').doc(id);
+    var doc = await ref.get();
+    return User.fromJson(doc.data()!);
+  }
+}

@@ -1,0 +1,16 @@
+tmbhakn izin permission internet ke folder android app/debug/main/androidmanifest.xml
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+masukan di <manifest setara dengan tag aplication
+pergi ke quicktype.io untuk instan parse json
+bikin model dengan cepat ke dartQuicktype.com
+
+gunakan FutureBuilder untuk menangkap return dari session
+untuk membuat sign in saat muncul ditengah gunakan layoutbuilder dan constrainbox
+untuk firebase auth akan membutuhkan sdkversion minimal 19 jd kita ubah dlu di local.properties dan
+ubah di build.gradle main menjadi  minSdkVersion localProperties.getProperty('flutter.MinSdkVersion').toInteger()
+biasanya firebase menggunakan multidexenabled true di bagian build gradle
+
+Remember
+Hotel = Property

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "39675466679",
+    "project_id": "ogo-apps",
+    "storage_bucket": "ogo-apps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:39675466679:android:53cf1d5ba10c6bea004e32",
+        "android_client_info": {
+          "package_name": "com.kostapp.OGO"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "39675466679-8cr2ehuvc2io47pva8imqoakdadtr48v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtLEpE-yj8MhPw3_tiIKfA1BIo04bx1M4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "39675466679-8cr2ehuvc2io47pva8imqoakdadtr48v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
